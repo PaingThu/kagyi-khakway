@@ -12,72 +12,23 @@
     <link href="assets/dist/css/bootstrap.css" rel="stylesheet">
     <link href="assets/css/style.css?2020072105" rel="stylesheet">
     <script src="assets/vue/vue.js?2020072102"></script>
-    
 
-  
+
+
 
   </head>
   <body>
-    
-    <!-- <div id="app1">
-      <h6>{{title}}</h6>
-      {{message}}
-    </div>
 
-    <div id="app2">
-      <h6>{{title}}</h6>
-      <span v-bind:title = "message">
-        Hover your mouse over me for a few seconds to see my dynamically bound title!
-      </span>
-    </div>
 
-    <div id="app3">
-      <h6>{{title}}</h6>
-      <span v-if="seen">Now you see me</span>
-    </div>
-
-    <div id="app4">
-      <h6>{{title}}</h6>
-      <ol>
-        <li v-for="todo in todos">
-          {{ todo.text }}
-        </li>
-      </ol>
-    </div>-->
-    
-    <!-- <div id="app5">
-      <h6>{{title}}</h6>
-      <p>{{message}}</p>
-      <span v-on:click = "reverseMessage">Reverse Message</span>
-    </div> -->
-<!--
-    <div id="app6">
-      <h6>{{title}}</h6>
-      <p>{{message}}</p>
-      <input v-model="message" placeholder = "Type Some words">
-    </div>
-
-    <div id="app7">
-      <h6>{{title}}</h6>
-      <ol>
-        <todo-item 
-          v-for="item in groceryList" 
-          v-bind:todo = "item"
-          v-bind:key = "item.id"
-        >
-        </todo-item>
-      </ol>
-    </div> -->
     <div id="app8" class="app8">
-      
-      <!-- <h6>{{title}}</h6> -->
+
       <div class="app-nav">
         <app-nav v-for="nav in navList" v-bind:toshow = "nav"></app-nav>
       </div>
-      <div class="app-body"> 
+      <div class="app-body">
         <app-body></app-body>
         <app-content v-for ="e in contentList" v-bind:conte = "e"></app-content>
-      </div>     
+      </div>
 
     </div>
   </body>
@@ -85,6 +36,6 @@
 
   <script src="assets/js/my.js?2020072105"></script>
 
-  
+
 
 </html>
