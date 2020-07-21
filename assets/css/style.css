@@ -1,0 +1,82 @@
+* {
+	user-select: none;
+}
+body{
+    color: #666;
+}
+
+.app8 .app-nav{
+    background: #666;
+    height: 50px;
+    padding: 10px;
+}
+.app8 .app-nav a{
+    margin:0px 10px;
+    color: white;
+}
+.app8 .app-body{
+    text-align: center;
+    padding: 10% 2% 0% 2%;
+}
+.app8 .app-body .body{
+    height: 500px;
+}
+.app8 .app-body h1{
+    text-align: center;
+}
+.app8 .app-body .content{
+    width: 31.3%;
+    float: left;
+    border: 1px solid gray;
+    margin: 0px 1%;
+    padding: 1%;
+}
+.app8 .app-body .content h3{
+    font-size: 1.5em;
+}
+.app8 .app-body .content h4{
+    font-size: 1em;
+}
+
+.app8 .app-body .body .mm_alphabert span{
+    font-size: 9em;
+    margin: 0px 1%;
+    text-shadow: 3px 2px gray;
+}
+.app8 .app-body .body .mm_alphabert span:first-child{
+    color: yellow;
+}
+.app8 .app-body .body .mm_alphabert span:nth-child(2){
+    color: green;
+}
+.app8 .app-body .body .mm_alphabert span:nth-child(3){
+    color: #999;
+    text-shadow: 3px 2px gray;
+}
+.app8 .app-body .body .mm_alphabert span:nth-child(4){
+    color: red;
+}
+.app8 .app-body .body .mm_alphabert span:nth-child(5){
+    color: blue;
+}
+
+.app8 .app-body .body .showPhrase p{
+    font-size: 2em;
+    text-shadow: 1px 1px gray;
+}
+.app8 .app-body .body .showPhrase .yellow{
+    color: yellow;
+}
+.app8 .app-body .body .showPhrase .green{
+    color: green;
+}
+.app8 .app-body .body .showPhrase .white{
+    color: #999;
+    
+}
+.app8 .app-body .body .showPhrase .red{
+    color: red;
+}
+.app8 .app-body .body .showPhrase .blue{
+    color: blue;
+}
