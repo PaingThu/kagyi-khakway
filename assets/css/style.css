@@ -5,9 +5,14 @@ body{
     color: #666;
 }
 
+
+.app8 .app-nav_mm{
+	display: none;
+}
 .app8 .app-nav{
+		width: 100%;
     background: #666;
-    height: 50px;
+    height: 53px;
     padding: 10px;
 }
 .app8 .app-nav a{
@@ -16,10 +21,11 @@ body{
 }
 .app8 .app-body{
     text-align: center;
-    padding: 2% 2% 0% 2%;
+    padding: 1% 0% 0% 0%;
 }
 .app8 .app-body .body{
     margin-bottom: 2%;
+		background: white;
 }
 .app8 .app-body h1{
     text-align: center;
@@ -37,28 +43,49 @@ body{
 .app8 .app-body .content h4{
     font-size: 1em;
 }
-
+.app8 .app-body .showPhrase{
+	width: 100%;
+	background: white;
+}
+.app8 .app-body .showVoice{
+	height: 20px;
+	width: 100%;
+	background: white;
+	margin-bottom: 3%;
+}
+.app8 .app-body .showPhrase p{
+    font-size: 2em;
+    /* text-shadow: 1px 1px gray; */
+}
+.app8 .app-body .showVoice p{
+    font-size: 1em;
+    /* text-shadow: 1px 1px gray; */
+}
 .app8 .app-body .mm_alphabert{
 			width: 61%;
-	    margin: 0px auto;
+	    margin: 0% auto;
 }
-
-
 .app8 .app-body .mm_alphabert span{
-    font-size: 400%;
+    font-size: 300%;
     margin: 0px 1%;
-    text-shadow: 3px 2px gray;
+    text-shadow: 1px 2px gray;
 		display: block;
 		float: left;
 		width: 200px ;
+		height: 85px;
+		border: 1px solid gray;
+}
+.app8 .app-body .mm_alphabert span:last-child{
+	color: white;
+	border: none;
+	text-shadow: none;
+}
+.app8 .app-body .mm_alphabert span:nth-last-child(5){
+	border: none;
+	color: white;
+	text-shadow: none;
 }
 
-
-.app8 .app-body .showPhrase p{
-    font-size: 2em;
-    text-shadow: 1px 1px gray;
-
-}
 .yellow{
     color: yellow;
 }
@@ -74,4 +101,78 @@ body{
 }
 .blue{
     color: blue;
+}
+.sel{
+	background-color: black;
+}
+
+@media only screen and (max-width: 375px) {
+	.app8 .app-nav{
+		display: none;
+	}
+	.app8 .app-nav_mm{
+		display: block !important;
+			width: 100%;
+	    background: #666;
+	    height: 53px;
+	    padding: 10px;
+	}
+	.app8 .app-body{
+
+	    text-align: center;
+	    padding: 1% 2% 0% 0%;
+	}
+	.app8 .app-body .body{
+			width: 100%;
+			padding-bottom: 6%;
+			background: white;
+	}
+	.app8 .app-body h1{
+		text-align: center;
+	    font-size: 1.5em;
+	}
+
+	.app8 .app-body .showPhrase{
+		width: 100%;
+		padding-bottom: 5%;
+		margin-top: 25%;
+		background: white;
+	}
+	.app8 .app-body .showVoice{
+		width: 100%;
+		margin-top: 40%;
+		padding-bottom: 17%;
+		background: white;
+	}
+	.app8 .app-body .mm_alphabert{
+			width: 90%;
+	    margin: 60% auto 0px auto;
+	}
+	.app-nav,.body,.showPhrase,.showVoice{
+		position: fixed;
+	}
+
+	.app8 .app-body .mm_alphabert span{
+	    font-size: 250%;
+	    margin: 0px 1%;
+	    text-shadow: 1px 2px gray;
+			display: block;
+			float: left;
+			width: 18%;
+			height: 70px;
+			border: 1px solid gray;
+	}
+
+
+	.app8 .app-body .showPhrase p{
+	    font-size: 1.25em;
+	    /* text-shadow: 1px 1px gray; */
+	}
+	.app8 .app-body .showVoice p{
+	    font-size: 1em;
+	    /* text-shadow: 1px 1px gray; */
+	}
+
+
+
 }
