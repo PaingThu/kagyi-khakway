@@ -16,10 +16,10 @@ body{
 }
 .app8 .app-body{
     text-align: center;
-    padding: 10% 2% 0% 2%;
+    padding: 2% 2% 0% 2%;
 }
 .app8 .app-body .body{
-    height: 500px;
+    margin-bottom: 2%;
 }
 .app8 .app-body h1{
     text-align: center;
@@ -38,45 +38,40 @@ body{
     font-size: 1em;
 }
 
-.app8 .app-body .body .mm_alphabert span{
-    font-size: 9em;
-    margin: 0px 1%;
-    text-shadow: 3px 2px gray;
-}
-.app8 .app-body .body .mm_alphabert span:first-child{
-    color: yellow;
-}
-.app8 .app-body .body .mm_alphabert span:nth-child(2){
-    color: green;
-}
-.app8 .app-body .body .mm_alphabert span:nth-child(3){
-    color: #999;
-    text-shadow: 3px 2px gray;
-}
-.app8 .app-body .body .mm_alphabert span:nth-child(4){
-    color: red;
-}
-.app8 .app-body .body .mm_alphabert span:nth-child(5){
-    color: blue;
+.app8 .app-body .mm_alphabert{
+			width: 61%;
+	    margin: 0px auto;
 }
 
-.app8 .app-body .body .showPhrase p{
+
+.app8 .app-body .mm_alphabert span{
+    font-size: 400%;
+    margin: 0px 1%;
+    text-shadow: 3px 2px gray;
+		display: block;
+		float: left;
+		width: 200px ;
+}
+
+
+.app8 .app-body .showPhrase p{
     font-size: 2em;
     text-shadow: 1px 1px gray;
+
 }
-.app8 .app-body .body .showPhrase .yellow{
+.yellow{
     color: yellow;
 }
-.app8 .app-body .body .showPhrase .green{
+.green{
     color: green;
 }
-.app8 .app-body .body .showPhrase .white{
+.white{
     color: #999;
-    
+
 }
-.app8 .app-body .body .showPhrase .red{
+.red{
     color: red;
 }
-.app8 .app-body .body .showPhrase .blue{
+.blue{
     color: blue;
 }

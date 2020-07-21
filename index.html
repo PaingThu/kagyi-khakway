@@ -10,7 +10,7 @@
 
     <!-- Bootstrap core CSS -->
     <link href="assets/dist/css/bootstrap.css" rel="stylesheet">
-    <link href="assets/css/style.css?2020072105" rel="stylesheet">
+    <link href="assets/css/style.css?2020072106" rel="stylesheet">
     <script src="assets/vue/vue.js?2020072102"></script>
 
 
@@ -27,14 +27,19 @@
       </div>
       <div class="app-body">
         <app-body></app-body>
-        <app-content v-for ="e in contentList" v-bind:conte = "e"></app-content>
+        <div class='showPhrase'><p :class='className'>{{message}}</p></div>
+        <div class='mm_alphabert'>
+            <app-content v-for ="e in wordList" v-bind:todo = "e"></app-content>
+
+        </div>
+
       </div>
 
     </div>
   </body>
 
 
-  <script src="assets/js/my.js?2020072105"></script>
+  <script src="assets/js/my.js?2020072106"></script>
 
 
 
