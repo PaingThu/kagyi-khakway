@@ -106,7 +106,7 @@ body{
 	background-color: black;
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 420px) {
 	.app8 .app-nav{
 		display: none;
 	}
