@@ -148,7 +148,7 @@ body{
 			width: 90%;
 	    margin: 60% auto 0px auto;
 	}
-	.app-nav,.body,.showPhrase,.showVoice{
+	.app-nav_mm,.body,.showPhrase,.showVoice{
 		position: fixed;
 	}
 
