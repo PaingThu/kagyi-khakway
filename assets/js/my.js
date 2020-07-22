@@ -2,9 +2,9 @@
     var con = "<span>{{welMsg}}</span>";
 
     var navList = [
-                    {nav: 'Home'},
-                    {nav: 'ဗျည်းအက္ခရာများ'},
-                    {nav: 'သရအက္ခရာများ'},
+                    {nav: 'ホーム'},
+                    {nav: '子音アルファベット'},
+                    {nav: '母音アルファベット'},
                   ];
     var navListMm = [
                     // {nav: 'Home'},
@@ -53,17 +53,53 @@
                       {word: 'အ',phrase:'အ - အမိမြေ ဒို့တိုင်းပြည် ငါတို့ချစ်တဲ့ မြေ',jpVoice:'a - a mi myay do tine pyay ngar do chit te myay',color: red},
                       {word: '-',phrase:'',jpVoice:'',color:blue},
                     ]
+
     Vue.component('app-nav',{
       props:['toshow'],
-      template:'<a>{{toshow.nav}}</a>'
+      template:"<a v-on:click='showPage(toshow.nav)'>{{toshow.nav}}</a>",
+      methods:{
+        showPage:function(pageTitle){
+          if(pageTitle == "ホーム"){
+            home.pgClassName = "home";
+            page1.pgClassName = "page1 hide";
+            page1.pageTitle = "";
+          }
+          if(pageTitle == "子音アルファベット"){
+            page1.pgClassName = "page1";
+            home.pgClassName = "home hide";
+            page1.pageTitle = pageTitle;
+          }
+          menu.menu = "menu";
+
+        },
+      },
     })
+    Vue.component('menu-icon',{
+      template:'<div v-on:click = "showMenu()" class="menu-icon"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></div>',
+      methods:{
+        showMenu:function(){
+          menu.menu = "menu show";
+        },
+      }
+    })
+    Vue.component('off-icon',{
+      template:'<div v-on:click = "showMenu()" class="off-icon"><img src="assets/img/close.svg"/></div>',
+      methods:{
+        showMenu:function(){
+          menu.menu = "menu";
+        },
+      }
+    })
+
+    var bodyTitle = {mm: 'မြန်မာစာ ဗျည်းအက္ခရာ (၃၃) လုံး',jp:'ミャンマー子音３３アルファベット', en: "Myanmar 33 Cosonant Alphabet"};
+    var bodyWelmsg = {mm: 'မြန်မာစာ သင်ပုန်းကြီး', jp: 'ミャンマーサー黒板', en: 'Myanmar Blackboard'};
 
     Vue.component('app-body',{
       template: "<div class='body'>" + con + ""  + tite + "</div>",
       data:function(){
         return{
-          title:'မြန်မာစာ ဗျည်းအက္ခရာ (၃၃) လုံး',
-          welMsg:'မြန်မာစာ သင်ပုန်းကြီး',
+          title: bodyTitle.jp,
+          welMsg:bodyWelmsg.jp,
         }
       },
     })
@@ -72,15 +108,16 @@
       template: "<span :class = todo.color v-on:click = 'showPhrase(todo.phrase,todo.jpVoice,todo.color)'>{{todo.word}}</span>",
       methods:{
         showPhrase:function(phrase,jpVoice,color){
-          app8.message = phrase;
-          app8.jpVoice = jpVoice;
-          app8.className = color;
-
+          page1.message = phrase;
+          page1.jpVoice = jpVoice;
+          page1.className = color;
+          page1.menu = "menu";
         },
       }
     })
-    var app8 = new Vue({
-      el: '#app8',
+
+    var page1 = new Vue({
+      el: '#page1',
       data:{
         title: "App8",
         navList: navList,
@@ -88,7 +125,47 @@
         wordList: wordList,
         message: "က - ကလေးငယ် ချစ်စဖွယ်",
         jpVoice: "ka_gyi - ka layy nge chit sa phwel",
-        className:"yellow"
+        className:"yellow",
+        menu:"menu",
+        pageTitle : "",
+        pgClassName : "page1 hide",
+      },
+
+    })
+    var mmFlg = "<div class='mm-flg-img'><img src='assets/img/mmFlg.png'></div>"
+    var hbTitle = "<h1>ミャンマー語</h1>";
+    var letStudy = "<h2>勉強しましょう</h2>"
+    var hbContent = "<div class='hb-content'><span>က</span><span>ခ</span><span>ဂ</span><span>ဃ</span><span>င</span></div>"
+    var mamawawa = "<div class='mamawawa'><span>မမ ဝဝ ထထ က အက ပထမ</span></div>"
+    var mamaImg = "<div class='mama-img'><img src='assets/img/mamawawa.png'></div>"
+
+
+    Vue.component('home-body',{
+      template:"<div class='home-body'>" + mmFlg + hbTitle + letStudy + hbContent +  mamawawa + mamaImg +"</div>",
+    })
+    var home = new Vue({
+      el: '#home',
+      data:{
+        navList: navList,
+        navListMm: navListMm,
+        menu:"menu",
+        pageTitle : "",
+        pgClassName : "home",
+
+      },
+      mouted(){
+        page1.pgClassName = "page1 hide";
+      }
+
+    })
+
+
+    var menu = new Vue({
+      el: '#menu',
+      data:{
+        menu:"menu hide",
+        navList: navList,
+        pgClassName: "home",
       },
 
     })

@@ -6,11 +6,11 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v4.0.1">
-    <title>Your Online Education</title>
+    <title>မြန်မာစာ</title>
 
     <!-- Bootstrap core CSS -->
     <link href="assets/dist/css/bootstrap.css" rel="stylesheet">
-    <link href="assets/css/style.css?2020072110" rel="stylesheet">
+    <link href="assets/css/style.css?2020072204" rel="stylesheet">
     <script src="assets/vue/vue.js?2020072102"></script>
 
 
@@ -19,32 +19,70 @@
   </head>
   <body>
 
+    <!-- HOME PAGE START -->
+    <div id="home" :class = pgClassName>
+      <div class="app-nav">
+        <app-nav v-for="nav in navList" v-bind:toshow = "nav"></app-nav>
+      </div>
+      <div class="app-nav_mm">
+        <span>{{pageTitle}}</span>
+        <menu-icon></menu-icon>
+      </div>
+      <div class="app-body">
+        <home-body></home-body>
+      </div>
 
-    <div id="app8" class="app8">
+    </div>
+    <!-- HOME PAGE END -->
+
+
+    <!-- PAGE1 START -->
+    <div id="page1" :class = pgClassName>
 
       <div class="app-nav">
         <app-nav v-for="nav in navList" v-bind:toshow = "nav"></app-nav>
       </div>
       <div class="app-nav_mm">
-        <app-nav v-for="nav in navListMm" v-bind:toshow = "nav"></app-nav>
+        <span>{{pageTitle}}</span>
+        <menu-icon></menu-icon>
       </div>
       <div class="app-body">
         <app-body></app-body>
-        <div></div>
-        <div class='showPhrase'><p>{{message}}</p></div>
-        <div class='showVoice'>発音 <p>{{jpVoice}}</p></div>
+        <div class="showArea">
+          <div class='showPhrase'><p>{{message}}</p></div>
+          <div class='showVoice'><font>発音</font> <p>{{jpVoice}}</p></div>
+        </div>
+        <div class="line">
+        </div>
         <div class='mm_alphabert'>
             <app-content v-for ="e in wordList" v-bind:todo = "e"></app-content>
+        </div>
+        <div class="bottom-area">
 
         </div>
 
       </div>
-
     </div>
+    <!-- PAGE1 END -->
+
+    <!-- MENU START -->
+    <div id="menu" :class = menu>
+      <off-icon></off-icon>
+      <div class="nav_mm">
+          <app-nav v-for="nav in navList" v-bind:toshow = "nav"></app-nav>
+      </div>
+    </div>
+    <!-- MENU END -->
+
+    <!-- FOOTER START -->
+    <footer class="footer">
+      <div class="container"><span>© mawpaingthu ・ 2020</span></div>
+    </footer>
+    <!-- FOOTER END -->
   </body>
 
 
-  <script src="assets/js/my.js?2020072108"></script>
+  <script src="assets/js/my.js?2020072206"></script>
 
 
 
