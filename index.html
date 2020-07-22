@@ -65,6 +65,46 @@
     </div>
     <!-- PAGE1 END -->
 
+    <!-- PAGE2 START -->
+    <div id="page2" :class = pgClassName>
+      <div class="app-nav">
+        <app-nav v-for="nav in navList" v-bind:toshow = "nav"></app-nav>
+      </div>
+      <div class="app-nav_mm">
+        <span>{{pageTitle}}</span>
+        <menu-icon></menu-icon>
+      </div>
+      <div class="app-body">
+        <!-- <home-body></home-body> -->
+        <div class="still">
+          申し訳ございません。メンテナンス中です。<br>
+          <!-- <img src='assets/img/stillCoding.jpg'/> -->
+        </div>
+      </div>
+
+    </div>
+    <!-- PAGE2 END -->
+
+    <!-- LAST PAGE START -->
+    <div id="lastPage" :class = pgClassName>
+      <div class="app-nav">
+        <app-nav v-for="nav in navList" v-bind:toshow = "nav"></app-nav>
+      </div>
+      <div class="app-nav_mm">
+        <span>{{pageTitle}}</span>
+        <menu-icon></menu-icon>
+      </div>
+      <div class="app-body">
+        <!-- <home-body></home-body> -->
+        <div class="still">
+          申し訳ございません。メンテナンス中です。<br>
+          <!-- <img src='assets/img/stillCoding.jpg'/> -->
+        </div>
+      </div>
+
+    </div>
+    <!-- LAST PAGE END -->
+
     <!-- MENU START -->
     <div id="menu" :class = menu>
       <off-icon></off-icon>
@@ -82,7 +122,7 @@
   </body>
 
 
-  <script src="assets/js/my.js?2020072206"></script>
+  <script src="assets/js/my.js?2020072207"></script>
 
 
 

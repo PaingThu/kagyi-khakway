@@ -5,6 +5,7 @@
                     {nav: 'ホーム'},
                     {nav: '子音アルファベット'},
                     {nav: '母音アルファベット'},
+                    {nav: '作った目的'},
                   ];
     var navListMm = [
                     // {nav: 'Home'},
@@ -62,11 +63,29 @@
           if(pageTitle == "ホーム"){
             home.pgClassName = "home";
             page1.pgClassName = "page1 hide";
+            page2.pgClassName = "page2 hide";
+            lastPage.pgClassName = "lastPage hide";
             page1.pageTitle = "";
           }
           if(pageTitle == "子音アルファベット"){
             page1.pgClassName = "page1";
             home.pgClassName = "home hide";
+            page2.pgClassName = "page2 hide";
+            lastPage.pgClassName = "lastPage hide";
+            page1.pageTitle = pageTitle;
+          }
+          if(pageTitle == "母音アルファベット"){
+            page2.pgClassName = "page2";
+            home.pgClassName = "home hide";
+            page1.pgClassName = "page1 hide";
+            lastPage.pgClassName = "lastPage hide";
+            page1.pageTitle = pageTitle;
+          }
+          if(pageTitle == "作った目的"){
+            lastPage.pgClassName = "lastPage";
+            home.pgClassName = "home hide";
+            page1.pgClassName = "page1 hide";
+            page2.pgClassName = "page2 hide";
             page1.pageTitle = pageTitle;
           }
           menu.menu = "menu";
@@ -111,7 +130,7 @@
           page1.message = phrase;
           page1.jpVoice = jpVoice;
           page1.className = color;
-          page1.menu = "menu";
+          menu.menu = "menu";
         },
       }
     })
@@ -154,6 +173,39 @@
 
       },
       mouted(){
+        page1.pgClassName = "page1 hide";
+        page2.pgClassName = "page2 hide";
+      }
+
+    })
+    var page2 = new Vue({
+      el: '#page2',
+      data:{
+        navList: navList,
+        navListMm: navListMm,
+        menu:"menu",
+        pageTitle : "母音アルファベット",
+        pgClassName : "page2 hide",
+
+      },
+      mouted(){
+        home.pgClassName = "home hide";
+        page1.pgClassName = "page1 hide";
+      }
+
+    })
+    var lastPage = new Vue({
+      el: '#lastPage',
+      data:{
+        navList: navList,
+        navListMm: navListMm,
+        menu:"menu",
+        pageTitle : "作った目的",
+        pgClassName : "lastPage hide",
+
+      },
+      mouted(){
+        home.pgClassName = "home hide";
         page1.pgClassName = "page1 hide";
       }
 

@@ -49,6 +49,9 @@ body{
     margin:0px 10px;
     color: white;
 }
+.app-nav a:hover{
+		color: gray !important;
+}
 .app-body{
     text-align: center;
     padding: 1% 0% 0% 0%;
@@ -190,7 +193,12 @@ footer{
 		font-size: 150%;
 		color: yellow;
 	}
-
+	.still{
+		margin-top: 50%;
+	}
+ .still img{
+		width: 200px;
+	}
 
 	.app-nav{
 		display: none;
