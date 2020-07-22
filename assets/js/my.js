@@ -162,7 +162,10 @@
 
 
     Vue.component('home-body',{
-      template:"<div class='home-body'>" + mmFlg + hbTitle + letStudy + hbContent +  mamawawa + mamaImg +"</div>",
+      template:"<div v-onclick='hideMenu()' class='home-body'>" + mmFlg + hbTitle + letStudy + hbContent +  mamawawa + mamaImg +"</div>",
+      methods:{
+       menu.menu="menu hide";
+      }
     })
     var home = new Vue({
       el: '#home',
