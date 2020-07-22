@@ -116,11 +116,13 @@ body{
 	    background: #666;
 	    height: 53px;
 	    padding: 10px;
+			color: #999;
+			text-align: center;
 	}
 	.app8 .app-body{
 
 	    text-align: center;
-	    padding: 1% 2% 0% 0%;
+	    padding: 15% 2% 0% 0%;
 	}
 	.app8 .app-body .body{
 			width: 100%;
