@@ -164,7 +164,7 @@
     Vue.component('home-body',{
       template:"<div v-on:click='hideMenu()' class='home-body'>" + mmFlg + hbTitle + letStudy + hbContent +  mamawawa + mamaImg +"</div>",
       methods:{
-        hide menu: function (){
+        hideMenu:function(){
           menu.menu="menu hide";
         },
       }
