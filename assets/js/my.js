@@ -124,13 +124,14 @@
     })
     Vue.component('app-content',{
       props:['todo'],
-      template: "<span :class = todo.color v-on:click = 'showPhrase(todo.phrase,todo.jpVoice,todo.color)'>{{todo.word}}</span>",
+      template: "<span :class = '[todo.color, {active: this.$parent.selectedWord == todo.word}]' v-on:click = 'showPhrase(todo)'>{{todo.word}}</span>",
       methods:{
-        showPhrase:function(phrase,jpVoice,color){
-          page1.message = phrase;
-          page1.jpVoice = jpVoice;
-          page1.className = color;
+        showPhrase:function(todo){
+          page1.message = todo.phrase;
+          page1.jpVoice = todo.jpVoice;
+          page1.className = todo.color;
           menu.menu = "menu";
+          this.$parent.selectedWord = todo.word;
         },
       }
     })
@@ -148,6 +149,7 @@
         menu:"menu",
         pageTitle : "",
         pgClassName : "page1 hide",
+        selectedWord: 'က'
       },
 
     })
