@@ -7,11 +7,6 @@
                     {nav: '母音アルファベット'},
                     {nav: '作った目的'},
                   ];
-    var navListMm = [
-                    // {nav: 'Home'},
-                    {nav: 'ဗျည်းအက္ခရာများ'},
-                    // {nav: 'သရအက္ခရာများ'},
-                  ];
     var yellow = "yellow";
     var green = "green";
     var white = "white";
@@ -36,17 +31,17 @@
                       {word: 'တ',phrase:'တ - တမာပင် ရွာအဝင်',jpVoice:'ta_win_pu - ta mar pin ywar a win',color:yellow},
                       {word: 'ထ',phrase:'ထ - ထမင်းပွဲ လက်ဆုံနွှဲ',jpVoice:'hta_sin_htoo - hta minn pwe lat sone hnwel',color:green},
                       {word: 'ဒ',phrase:'ဒ - ဒရယ်ရုံ သားမျိုးစုံ',jpVoice:'da_dwayy - da yal yone tharr myo sone',color:white},
-                      {word: 'ဓ',phrase:'ဓ - ဓနိတော',jpVoice:'da_wat_chite - da ni taw',color: red},
-                      {word: 'န',phrase:'န - ',jpVoice:'na_nge - ',color:blue},
-                      {word: 'ပ',phrase:'ပ - ',jpVoice:'pa_saute - ',color:yellow},
+                      {word: 'ဓ',phrase:'ဓ - ဓနိတန်း ပင်လယ်ကမ်း',jpVoice:'da_wat_chite - da ni taw',color: red},
+                      {word: 'န',phrase:'န - နဖူးပြင် နံ့သာတင်',jpVoice:'na_nge - ',color:blue},
+                      {word: 'ပ',phrase:'ပ - ပလွေမှုတ် ကိုဖိုးတုတ်',jpVoice:'pa_saute - ',color:yellow},
                       {word: 'ဖ',phrase:'ဖ - ဖရုံယို အလွန်ချို',jpVoice:'pha_wa_htoke - pha yone yo a lon cho',color:green},
                       {word: 'ဗ',phrase:'ဗ - ဗလကြီး ဆင်ပြောင်စီး',jpVoice:'ba_lat_chite - ba la gyii sin pyaung see',color:white},
-                      {word: 'ဘ',phrase:'ဘ - ',jpVoice:'ba_gone - ',color: red},
+                      {word: 'ဘ',phrase:'ဘ - ဘဘိုးအို စီးလိုကြို',jpVoice:'ba_gone - ',color: red},
                       {word: 'မ',phrase:'မ - မမလေး ဝလုံးရေး',jpVoice:'ma - ma ma layy wa lone yayy',color:blue},
                       {word: 'ယ',phrase:'ယ - ယမင်းခင် ကကြိုးဆင်',jpVoice:'ya_pa_lat - ya minn khin ka kyo sin',color:yellow},
                       {word: 'ရ',phrase:'ရ - ရထားကြီး ပျော်ပျော်စီး',jpVoice:'ya_gaute - ya htarr gyi pyaw pyaw see',color:green},
                       {word: 'လ',phrase:'လ - လဝါဝါ ထိန်ထိန်သာ',jpVoice:'la - la war war htain htain thar',color:white},
-                      {word: 'ဝ',phrase:'ဝ - ',jpVoice:'wa - ',color: red},
+                      {word: 'ဝ',phrase:'ဝ - ဝတုတ်တုတ် ဖိုး၀ရုပ်',jpVoice:'wa - ',color: red},
                       {word: 'သ',phrase:'သ - သပြေညို အောင်ပွဲကြို',jpVoice:'tha - tha pyay nyo aung pwe kyo',color:blue},
                       {word: '-',phrase:'',jpVoice:'',color:yellow},
                       {word: 'ဟ',phrase:'ဟ - ဟ ဟာ ဟား ရယ်လိုက်ရ',jpVoice:'ha - ha ha ha yee lite ya',color:green},
