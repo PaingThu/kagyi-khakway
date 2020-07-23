@@ -136,7 +136,6 @@
       data:{
         title: "App8",
         navList: navList,
-        navListMm: navListMm,
         wordList: wordList,
         message: "က - ကလေးငယ် ချစ်စဖွယ်",
         jpVoice: "ka_gyi - ka layy nge chit sa phwel",
@@ -146,7 +145,6 @@
         pgClassName : "page1 hide",
         selectedWord: 'က'
       },
-
     })
     var mmFlg = "<div class='mm-flg-img'><img src='assets/img/mmFlg.png'></div>"
     var hbTitle = "<h1>ミャンマー語</h1>";
@@ -168,7 +166,6 @@
       el: '#home',
       data:{
         navList: navList,
-        navListMm: navListMm,
         menu:"menu",
         pageTitle : "",
         pgClassName : "home",
@@ -184,7 +181,6 @@
       el: '#page2',
       data:{
         navList: navList,
-        navListMm: navListMm,
         menu:"menu",
         pageTitle : "母音アルファベット",
         pgClassName : "page2 hide",
@@ -200,7 +196,6 @@
       el: '#lastPage',
       data:{
         navList: navList,
-        navListMm: navListMm,
         menu:"menu",
         pageTitle : "作った目的",
         pgClassName : "lastPage hide",
