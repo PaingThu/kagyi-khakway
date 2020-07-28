@@ -84,7 +84,15 @@ body{
 }
 .page-body .showPhrase{
 	width: 100%;
-
+}
+.page2 .page-body .showPhrase .phrase1{
+	color: yellow;
+}
+.page2 .page-body .showPhrase .phrase2{
+	color: #3efd00;
+}
+.page2 .page-body .showPhrase .phrase3{
+	color: #17a2b8;
 }
 .page-body .showVoice{
 	height: 20px;
@@ -104,7 +112,7 @@ body{
 			width: 58%;
 	    margin: 0% auto;
 }
-.page-body .mm_alphabert span{
+.page1 .page-body .mm_alphabert span{
     font-size: 300%;
     text-shadow: 1px 2px gray;
 		display: block;
@@ -113,20 +121,33 @@ body{
 		height: 85px;
 		border: 1px solid gray;
 }
+.page2 .page-body .mm_alphabert span{
+    font-size: 300%;
+    text-shadow: 1px 2px gray;
+		display: block;
+		float: left;
+		width: 20% ;
+		height: 168px;
+		border: 1px solid gray;
+		color: #17a2b8;
+}
+.page2 .page-body .mm_alphabert span label{
+	font-size: 90%;
+	margin: 0% 0px;
+	color:#666;
+}
+
 .page1 .page-body .mm_alphabert span:last-child{
 	color: white !important;
 	border: none !important;
 	text-shadow: none !important;
-	margin-bottom: 7%;
 }
 .page1 .page-body .mm_alphabert span:nth-last-child(5){
 	border: none !important;
 	color: white !important;
 	text-shadow: none !important;
 }
-.page2 .page-body .mm_alphabert span:last-child{
-	margin-bottom: 7%;
-}
+
 .yellow,.home-body span:first-child{
     color: yellow;
 }
@@ -385,15 +406,7 @@ footer{
 		margin-top: 1%;
 		width: 92%;
 	}
-	.page2 .page-body .showPhrase .phrase1{
-		color: yellow;
-	}
-	.page2 .page-body .showPhrase .phrase2{
-		color: #3efd00;
-	}
-	.page2 .page-body .showPhrase .phrase3{
-		color: #17a2b8;
-	}
+
 
 
 	.page-body .line{
@@ -407,6 +420,7 @@ footer{
 		width: 100%;
 		padding: 0px 3%;
 	}
+
 	.app-nav_mm,.body,.showArea,.line,.showPhrase,.showVoice{
 		position: fixed;
 	}
@@ -431,6 +445,9 @@ footer{
 			border: 1px solid gray;
 			padding: 4% 0px;
 			color: #17a2b8;
+	}
+	.page-body .mm_alphabert span:last-child{
+		margin-bottom: 7%;
 	}
 	.page2 .page-body .mm_alphabert span label{
 		font-size: 90%;
