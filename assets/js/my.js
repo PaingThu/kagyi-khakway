@@ -1,5 +1,4 @@
-    var tite = "<h1>{{title}}</h1>";
-    var con = "<span>{{welMsg}}</span>";
+
 
     var navList = [
                     {nav: 'ホーム'},
@@ -12,7 +11,7 @@
     var white = "white";
     var red = "red";
     var blue = "blue";
-    var wordList = [
+    var consoList = [
                       {word: 'က',phrase:'က - ကလေးငယ် ချစ်စဖွယ်',jpVoice:'ka_gyi - ka layy nge chit sa phwel', color:yellow},
                       {word: 'ခ',phrase:'ခ - ခရေကုံး မလေးပြုံ',jpVoice:'kha_kwayy - kha yay kone ma layy pyone',color:green},
                       {word: 'ဂ',phrase:'ဂ - ဂဏန်းသင် ပြုံးရွှင်ရွှင်',jpVoice:'ga_nge - gan nann thin pyone shwin shwin',color:white},
@@ -49,6 +48,26 @@
                       {word: 'အ',phrase:'အ - အမိမြေ ဒို့တိုင်းပြည် ငါတို့ချစ်တဲ့ မြေ',jpVoice:'a - a mi myay do tine pyay ngar do chit te myay',color: red},
                       {word: '-',phrase:'',jpVoice:'',color:blue},
                     ]
+    var vowelList = [
+                      {word: 'အ',phrase1:'က + အ',phrase2:'က + *', phrase3: 'က',jpVoice:'ka + a  → ka', symbol:''},
+                      {word: 'အာ',phrase1:'က + အာ',phrase2:'က + ာ',phrase3:'ကာ',jpVoice:'ka + ar  → kar',symbol:'ာ'},
+                      {word: 'ဣ',phrase1:'က + ဣ',phrase2:'က + ိ',phrase3:'ကိ',jpVoice:'ka + i  → ki',symbol:'ိ'},
+                      {word: 'ဤ',phrase1:'က + ဤ',phrase2:'က + ီ',phrase3:'ကီ',jpVoice:'ka + i-  → ki-',symbol: 'ီ'},
+                      {word: 'ဥ',phrase1:'က + ဥ',phrase2:'က + ု',phrase3:'ကု',jpVoice:'ka + u  → ku',symbol:'ု'},
+                      {word: 'ဦ',phrase1:'က + ဦ',phrase2:'က + ူ',phrase3:'ကူ',jpVoice:'ka + u-  → ku-',symbol:'ူ'},
+                      {word: 'ဧ',phrase1:'က + ဧ',phrase2:'က + ေ',phrase3:'ကေ',jpVoice:'ka + ay  → kay',symbol:'ေ'},
+                      {word: 'အဲ',phrase1:'က + အဲ',phrase2:'က + ဲ',phrase3:'ကဲ',jpVoice:'ka + e  → ke',symbol:'ဲ'},
+                      {word: 'သြ',phrase1:'က + သြ',phrase2:'က + ော',phrase3:'ကော',jpVoice:'ka + aw  → kaw',symbol: 'ော'},
+                      {word: 'ဪ',phrase1:'က + ဪ',phrase2:'က + ော်',phrase3:'ကော်',jpVoice:'ka + aww  → kaw-',symbol:'ော်'},
+                      {word: 'အံ',phrase1:'က + အံ',phrase2:'က + ံ',phrase3:'ကံ',jpVoice:'ka + an  → kan',symbol:'ံ'},
+                      {word: 'အား',phrase1:'က + အား',phrase2:'က + ား',phrase3:'ကား',jpVoice:'karr + arr  → karr',symbol:'ား'},
+                    ]
+    var bodyTitle = {page1:{mm: 'မြန်မာစာ ဗျည်းအက္ခရာ (၃၃) လုံး',jp:'ミャンマー子音３３アルファベット', en: "Myanmar 33 Cosonant Alphabet"},
+                     page2:{mm: 'မြန်မာစာ သင်ရိုးသရအက္ခရာ (၁၂) လုံး',jp:'ミャンマーカリキュラム母音１２アルファベット', en: "Myanmar Carriculum 12 Vowel Alphabet"},
+                     lastPage:{mm: 'မြန်မာစာသင်ပုန်းကြီး ဖန်တီးရသော ရယ်ရွယ်ချက်',jp:'作った目的', en: "The purpose of creating this app"}};
+    var bodyMsg = {mm: 'မြန်မာစာ သင်ပုန်းကြီး', jp: 'ミャンマーサー黒板', en: 'Myanmar Blackboard'};
+    var vowelExplain = "子音は子音だけで発音が出られません。子音を母音で"
+
 
     Vue.component('app-nav',{
       props:['toshow'],
@@ -56,32 +75,38 @@
       methods:{
         showPage:function(pageTitle){
           if(pageTitle == "ホーム"){
+            addClassBody("bg-origin");
+            allHide();
             home.pgClassName = "home";
-            page1.pgClassName = "page1 hide";
-            page2.pgClassName = "page2 hide";
-            lastPage.pgClassName = "lastPage hide";
-            page1.pageTitle = "";
+            appHeader.pageTitle = "";
+
           }
           if(pageTitle == "子音アルファベット"){
+            addClassBody("bg-white");
+            allHide();
+            appTitle.pgClassName = "appTitle";
             page1.pgClassName = "page1";
-            home.pgClassName = "home hide";
-            page2.pgClassName = "page2 hide";
-            lastPage.pgClassName = "lastPage hide";
-            page1.pageTitle = pageTitle;
+            appHeader.pageTitle = pageTitle;
+            appTitle.title = bodyTitle.page1.jp;
+            appTitle.subTitle = bodyMsg.jp;
           }
           if(pageTitle == "母音アルファベット"){
+            addClassBody("bg-white");
+            allHide();
+            appTitle.pgClassName = "appTitle";
             page2.pgClassName = "page2";
-            home.pgClassName = "home hide";
-            page1.pgClassName = "page1 hide";
-            lastPage.pgClassName = "lastPage hide";
-            page1.pageTitle = pageTitle;
+            appHeader.pageTitle = pageTitle;
+            appTitle.title = bodyTitle.page2.jp;
+            appTitle.subTitle = bodyMsg.jp;
           }
           if(pageTitle == "作った目的"){
+            addClassBody("bg-white");
+            allHide();
+            appTitle.pgClassName = "appTitle";
             lastPage.pgClassName = "lastPage";
-            home.pgClassName = "home hide";
-            page1.pgClassName = "page1 hide";
-            page2.pgClassName = "page2 hide";
-            page1.pageTitle = pageTitle;
+            appTitle.title = bodyTitle.lastPage.jp;
+            appTitle.subTitle = bodyMsg.jp;
+            appHeader.pageTitle = pageTitle;
           }
           menu.menu = "menu";
 
@@ -105,18 +130,65 @@
       }
     })
 
-    var bodyTitle = {mm: 'မြန်မာစာ ဗျည်းအက္ခရာ (၃၃) လုံး',jp:'ミャンマー子音３３アルファベット', en: "Myanmar 33 Cosonant Alphabet"};
-    var bodyWelmsg = {mm: 'မြန်မာစာ သင်ပုန်းကြီး', jp: 'ミャンマーサー黒板', en: 'Myanmar Blackboard'};
 
-    Vue.component('app-body',{
-      template: "<div class='body'>" + con + ""  + tite + "</div>",
-      data:function(){
-        return{
-          title: bodyTitle.jp,
-          welMsg:bodyWelmsg.jp,
-        }
+
+    var appHeader = new Vue({
+      el: '#appHeader',
+      data:{
+        navList: navList,
+        menu:"menu",
+        pageTitle: "",
+        pgClassName: "home",
+        title:"",
+        welMsg:"",
       },
     })
+
+    var title = "<h1>{{this.$parent.title}}</h1>";
+    var con = "<span>{{this.$parent.subTitle}}</span>";
+    Vue.component('app-body',{
+      template: "<div class='body'>" + con + ""  + title + "</div>",
+    })
+
+    var appTitle = new Vue({
+      el: "#appTitle",
+      data:{
+        pgClassName: "hide",
+        title:"",
+        subTitle:"",
+      },
+
+    })
+
+    var mmFlg = "<div class='mm-flg-img'><img src='assets/img/mmFlg.png'></div>"
+    var hbTitle = "<h1>ミャンマー語</h1>";
+    var letStudy = "<h2>勉強しましょう</h2>"
+    var hbContent = "<div class='hb-content'><span>က</span><span>ခ</span><span>ဂ</span><span>ဃ</span><span>င</span></div>"
+    var mamawawa = "<div class='mamawawa'><span>မမ ဝဝ ထထ က အက ပထမ</span></div>"
+    var mamaImg = "<div class='mama-img'><img src='assets/img/mamawawa.png'></div>"
+    Vue.component('home-body',{
+      template:"<div v-on:click='hideMenu()' class='home-body'>" + mmFlg + hbTitle + letStudy + hbContent +  mamawawa + mamaImg +"</div>",
+      methods:{
+        hideMenu:function(){
+          menu.menu="menu hide";
+        },
+      }
+    })
+    var home = new Vue({
+      el: '#home',
+      data:{
+        pgClassName : "home",
+      },
+      mouted(){
+        if(appHeader.pgClassName == "home"){
+          pgClassName = "home";
+          appHeader.pageTitle = "";
+        }else{
+          pgClassName = "home hide";
+        }
+      }
+    })
+
     Vue.component('app-content',{
       props:['todo'],
       template: "<span :class = '[todo.color, {active: this.$parent.selectedWord == todo.word}]' v-on:click = 'showPhrase(todo)'>{{todo.word}}</span>",
@@ -130,80 +202,80 @@
         },
       }
     })
-
     var page1 = new Vue({
       el: '#page1',
       data:{
-        title: "App8",
-        navList: navList,
-        wordList: wordList,
+        consoList: consoList,
         message: "က - ကလေးငယ် ချစ်စဖွယ်",
         jpVoice: "ka_gyi - ka layy nge chit sa phwel",
         className:"yellow",
         menu:"menu",
-        pageTitle : "",
         pgClassName : "page1 hide",
-        selectedWord: 'က'
-      },
-    })
-    var mmFlg = "<div class='mm-flg-img'><img src='assets/img/mmFlg.png'></div>"
-    var hbTitle = "<h1>ミャンマー語</h1>";
-    var letStudy = "<h2>勉強しましょう</h2>"
-    var hbContent = "<div class='hb-content'><span>က</span><span>ခ</span><span>ဂ</span><span>ဃ</span><span>င</span></div>"
-    var mamawawa = "<div class='mamawawa'><span>မမ ဝဝ ထထ က အက ပထမ</span></div>"
-    var mamaImg = "<div class='mama-img'><img src='assets/img/mamawawa.png'></div>"
-
-
-    Vue.component('home-body',{
-      template:"<div v-on:click='hideMenu()' class='home-body'>" + mmFlg + hbTitle + letStudy + hbContent +  mamawawa + mamaImg +"</div>",
-      methods:{
-        hideMenu:function(){
-          menu.menu="menu hide";
-        },
-      }
-    })
-    var home = new Vue({
-      el: '#home',
-      data:{
-        navList: navList,
-        menu:"menu",
-        pageTitle : "",
-        pgClassName : "home",
-
+        selectedWord: 'က',
       },
       mouted(){
-        page1.pgClassName = "page1 hide";
-        page2.pgClassName = "page2 hide";
+        if(appHeader.pgClassName == "page1"){
+          pgClassName = "page1";
+          appHeader.pageTitle = "子音アルファベット";
+        }else{
+          pgClassName = "page1 hide";
+        }
       }
+    })
 
+    var labelPh1 = "<label class='phrase1'>";
+    var labelPh2 = "<label class='phrase2'>";
+    var labelPh3 = "<label class='phrase3'>";
+    var closeLabel = "</label>";
+    Vue.component('vowel',{
+      props:['todo'],
+      template: "<span :class = '{active: this.$parent.selectedWord == todo.word}' v-on:click = 'showPhrase(todo)'>{{todo.word}}<br><label>{{todo.symbol}}</label></span>",
+      methods:{
+        showPhrase:function(todo){
+          page2.phrase1 = todo.phrase1;
+          page2.phrase2 = todo.phrase2;
+          page2.phrase3 = todo.phrase3;
+          page2.jpVoice = todo.jpVoice;
+          menu.menu = "menu";
+          this.$parent.selectedWord = todo.word;
+        },
+      }
     })
     var page2 = new Vue({
       el: '#page2',
       data:{
-        navList: navList,
+        vowelList: vowelList,
+        phrase1: "က + အ",
+        phrase2: "က + *",
+        phrase3: "က",
+        jpVoice: "ka + a  → ka",
         menu:"menu",
-        pageTitle : "母音アルファベット",
         pgClassName : "page2 hide",
-
+        selectedWord: 'အ',
       },
       mouted(){
-        home.pgClassName = "home hide";
-        page1.pgClassName = "page1 hide";
+        if(appHeader.pgClassName == "page2"){
+          pgClassName = "page2";
+          appHeader.pageTitle = "母音アルファベット";
+        }else{
+          pgClassName = "page2 hide";
+        }
       }
 
     })
     var lastPage = new Vue({
       el: '#lastPage',
       data:{
-        navList: navList,
         menu:"menu",
-        pageTitle : "作った目的",
         pgClassName : "lastPage hide",
-
       },
       mouted(){
-        home.pgClassName = "home hide";
-        page1.pgClassName = "page1 hide";
+        if(appHeader.pgClassName == "lastPage"){
+          pgClassName = "lastPage";
+          appHeader.pageTitle = "作った目的";
+        }else{
+          pgClassName = "lastPage hide";
+        }
       }
 
     })
@@ -214,7 +286,19 @@
       data:{
         menu:"menu hide",
         navList: navList,
-        pgClassName: "home",
       },
 
     })
+
+    function allHide() {
+      appTitle.pgClassName = "hide";
+      home.pgClassName = "home hide";
+      page1.pgClassName = "page1 hide";
+      page2.pgClassName = "page2 hide";
+      lastPage.pgClassName = "lastPage hide";
+    }
+
+    function addClassBody(bgColor){
+      $('body').removeClass();
+      $('body').addClass(bgColor);
+    }

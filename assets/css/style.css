@@ -3,6 +3,13 @@
 }
 body{
     color: #666;
+		background: #666;
+}
+.bg-origin{
+	background: #666;
+}
+.bg-white{
+	background: white;
 }
 .hide{
 	display: none !important;
@@ -12,7 +19,6 @@ body{
 }
 .home{
 	background: #666;
-	padding-bottom: 14%;
 }
 .home-body .mm-flg-img img{
 	width: 300px;
@@ -56,6 +62,10 @@ body{
     text-align: center;
     padding: 1% 0% 0% 0%;
 }
+.page-body{
+    text-align: center;
+    padding: 0% 0% 0% 0%;
+}
 .app-body .body{
     margin-bottom: 1%;
 		background: white;
@@ -63,20 +73,7 @@ body{
 .app-body h1{
     text-align: center;
 }
-.app-body .content{
-    width: 31.3%;
-    float: left;
-    border: 1px solid gray;
-    margin: 0px 1%;
-    padding: 1%;
-}
-.app-body .content h3{
-    font-size: 1.5em;
-}
-.app-body .content h4{
-    font-size: 1em;
-}
-.app-body .showArea{
+.page-body .showArea{
 	border:1px solid gray;
 	margin: 0px auto;
 	padding: 1% 0px;
@@ -85,31 +82,29 @@ body{
 	background: #666;
 	color: white;
 }
-.app-body .showPhrase{
+.page-body .showPhrase{
 	width: 100%;
 
 }
-.app-body .showVoice{
+.page-body .showVoice{
 	height: 20px;
 	width: 100%;
 	margin-bottom: 3%;
 }
-.app-body .showPhrase p{
+.page-body .showPhrase p{
     font-size: 2em;
-    /* text-shadow: 1px 1px gray; */
 }
-.app-body .showVoice p{
+.page-body .showVoice p{
     font-size: 1em;
-    /* text-shadow: 1px 1px gray; */
 }
-.app-body .line{
+.page-body .line{
 	height: 20px;
 }
-.app-body .mm_alphabert{
+.page-body .mm_alphabert{
 			width: 58%;
 	    margin: 0% auto;
 }
-.app-body .mm_alphabert span{
+.page-body .mm_alphabert span{
     font-size: 300%;
     text-shadow: 1px 2px gray;
 		display: block;
@@ -118,17 +113,20 @@ body{
 		height: 85px;
 		border: 1px solid gray;
 }
-.app-body .mm_alphabert span:last-child{
-	color: white;
-	border: none;
-	text-shadow: none;
+.page1 .page-body .mm_alphabert span:last-child{
+	color: white !important;
+	border: none !important;
+	text-shadow: none !important;
+	margin-bottom: 7%;
 }
-.app-body .mm_alphabert span:nth-last-child(5){
-	border: none;
-	color: white;
-	text-shadow: none;
+.page1 .page-body .mm_alphabert span:nth-last-child(5){
+	border: none !important;
+	color: white !important;
+	text-shadow: none !important;
 }
-
+.page2 .page-body .mm_alphabert span:last-child{
+	margin-bottom: 7%;
+}
 .yellow,.home-body span:first-child{
     color: yellow;
 }
@@ -162,17 +160,148 @@ footer{
 	color: #c7c7c7;
 }
 
-
+/* iPad Layout */
+@media only screen and (min-width: 414px) and (max-width: 450px){
+	.app-body{
+		padding: 11% 0% 0% 0%;
+	}
+	.app-body .body{
+		padding-top: 3%;
+	}
+	.page-body .line{
+		margin-top: 42%;
+	}
+	.page-body .showArea{
+		margin: 20% 3% 0% 3%;
+		width: 94%;
+	}
+	.page-body .showVoice{
+		width: 94%;
+		margin-top: 7%;
+	}
+	.page-body .mm_alphabert{
+		margin-top: 45%;
+	}
+}
+/* iPhone-6/7/8 Plus */
+@media only screen and (min-width: 375px) and (max-width: 414px){
+	.app-body{
+		padding: 14% 0% 0% 0%;
+	}
+	.app-body .body{
+		padding-top: 2%;
+	}
+	.page-body .line{
+		margin-top: 44%;
+	}
+	.page-body .showArea{
+		margin: 20% 3% 0% 3%;
+		width: 94%;
+	}
+	.page-body .showVoice{
+		width: 94%;
+		margin-top: 10%;
+	}
+	.page-body .mm_alphabert{
+		margin-top: 48%;
+	}
+}
+/* iPhone-6/7/8 & iPhone-X */
+@media only screen and (min-width: 320px) and (max-width: 375px){
+	.app-body{
+	  padding: 14% 0% 0% 0%;
+	}
+	.app-body .body{
+		padding-top: 2%;
+	}
+	.page-body .line{
+		margin-top: 46%;
+	}
+	.page-body .showArea{
+		margin: 20% 4% 0% 4%;
+		width: 92%;
+	}
+	.page-body .showVoice{
+		width: 92%;
+		margin-top: 10%;
+	}
+	.page-body .mm_alphabert{
+		margin-top: 51%;
+	}
+}
+/* iPhone-5/SE */
+@media only screen and (min-width: 28px) and (max-width: 320px){
+	.app-body{
+	  padding: 17% 0% 0% 0%;
+	}
+	.app-body .body span{
+		font-size: 70% !important;
+	}
+	.app-body .body h1{
+		font-size: 100% !important;
+	}
+	.page-body .line{
+		margin-top: 50%;
+	}
+	.page-body .mm_alphabert{
+		margin-top: 55%;
+	}
+}
+/* Glasy Fold */
+@media only screen and (max-width: 280px){
+	.home	.home-body .hb-content span{
+		font-size: 360% !important;	text-shadow: 1px 1px gray !important;
+	}
+	.home-body .mamawawa span{
+		font-size: 110% !important;
+	}
+	.app-body{
+	  padding: 19% 0% 0% 0%;
+	}
+	.page-body .showArea{
+		margin: 25% 4% 0% 4%;	width: 92%;
+	}
+	.page-body .showVoice{
+		width: 92%;	margin-top: 13%;
+	}
+	.page-body .line{
+		margin-top: 60%;
+	}
+	.page-body .mm_alphabert{
+		margin-top: 65%;
+	}
+	.app-body body span{
+	  font-size: 70% !important;
+	}
+	.app-body body h1{
+	  font-size: 100% !important;
+	}
+	.page-body .mm_alphabert span{
+	    font-size: 190% !important;	margin: 0px !important;
+		 	width: 20% !important;　text-shadow: 1px 1px gray !important;
+			height: 55px !important;
+	}
+	.page-body .showPhrase p{
+	    font-size: 90% !important;
+	}
+	.page-body .showVoice font{
+		font-size: 70% !important;
+	}
+	.page-body .showVoice p{
+		font-size: 80% !important;
+	}
+	.nav_mm a{
+		font-size: 80%;
+	}
+}
 
 /* Mobile Layout */
-@media only screen and (max-width: 420px) {
-
+@media only screen and (max-width: 450px) {
 	.home{
 		background: #666;
-		padding-bottom: 10%;
 	}
 	.home-body{
-		margin:15% 0% 0% 0%;
+		margin: 20% 0% 0% 0%;
 	}
 	.home-body .mm-flg-img img{
 		width: 140px;
@@ -191,7 +320,6 @@ footer{
 		text-shadow: 3px 1px gray !important;
 		margin: 1%;
 	}
-
 	.home-body .mamawawa span{
 		font-size: 150%;
 		color: yellow;
@@ -226,60 +354,64 @@ footer{
 		margin: 15% 0px;
 		text-shadow: none;
 	}
-
-
 	.app-body{
 	    text-align: center;
-	    padding: 15% 0% 0% 0%;
+	}
+	.page-body{
+	    text-align: center;
+	    padding: 1% 0% 0% 0%;
 	}
 	.app-body .body{
 			width: 100%;
-			padding-bottom: 10%;
+			padding-bottom: 35%;
 			background: white;
 	}
 	.app-body span{
 		text-align: center;
-	    font-size: 100%;
+	    font-size: 70%;
 	}
 	.app-body h1{
 		text-align: center;
-	    font-size: 130%;
+	    font-size: 100%;
 	}
-	.app-body .showArea{
+	.page-body .showArea{
 		border:1px solid gray;
-		margin: 20% 4% 0% 4%;
-		width: 92%;
 		height:100px;
 		background: #666;
 		color: white;
 	}
-	.app-body .line{
-		margin-top: 46%;
+
+	.page-body .showPhrase{
+		margin-top: 1%;
+		width: 92%;
+	}
+	.page2 .page-body .showPhrase .phrase1{
+		color: yellow;
+	}
+	.page2 .page-body .showPhrase .phrase2{
+		color: #3efd00;
+	}
+	.page2 .page-body .showPhrase .phrase3{
+		color: #17a2b8;
+	}
+
+
+	.page-body .line{
 		height: 2%;
 		background: white;
 		width: 100%;
 	}
-	.app-body .showPhrase{
-		margin-top: 1%;
-		width: 92%;
-	}
-	.app-body .showVoice{
-		width: 92%;
-		margin-top: 10%;
-	}
-	.app-body .showVoice font{
-		font-size: 75%;
-	}
-	.app-body .mm_alphabert{
+
+
+	.page-body .mm_alphabert{
 		width: 100%;
-		margin-top: 52%;
 		padding: 0px 3%;
 	}
 	.app-nav_mm,.body,.showArea,.line,.showPhrase,.showVoice{
 		position: fixed;
 	}
 
-	.app-body .mm_alphabert span{
+	.page1 .page-body .mm_alphabert span{
 	    font-size: 250%;
 	    margin: 0px 1%;
 	    text-shadow: 1px 2px gray;
@@ -289,30 +421,45 @@ footer{
 			height: 70px;
 			border: 1px solid gray;
 	}
-
-
-	.app-body .showPhrase p{
-	    font-size: 1.25em;
-	    /* text-shadow: 1px 1px gray; */
+	.page2 .page-body .mm_alphabert span{
+	    font-size: 150%;
+	    text-shadow: 1px 1px gray;
+			display: block;
+			float: left;
+			width: 50%;
+			height: 95px;
+			border: 1px solid gray;
+			padding: 4% 0px;
+			color: #17a2b8;
 	}
-	.app-body .showVoice p{
+	.page2 .page-body .mm_alphabert span label{
+		font-size: 90%;
+		margin: 0% 0px;
+		color:#666;
+	}
+	.page-body .showPhrase p{
+	    font-size: 1.25em;
+	}
+	.page-body .showVoice font{
+		font-size: 75%;
+	}
+	.page-body .showVoice p{
 	    font-size: 1em;
-	    /* text-shadow: 1px 1px gray; */
 	}
 
 	.bottom-area{
 		height: 40px;
-	  margin-top: 185%;
 	}
 	.menu{
 			position:fixed;
-			width: 50%;
-			height: 400px;
+			width: 70%;
+			border-radius: 0% 0% 0% 5%;
 			background: #f9f9f9;
 			top: 0;
 			right: 0;
 			opacity: 100%;
 			color: #666;
+			box-shadow: 3px 4px #999;
 		}
 		.show{
 			display:block !important;
@@ -327,7 +474,7 @@ footer{
 		}
 		.nav_mm a{
 			display: block;
-	    padding: 5% 5px;
+	    padding: 5% 5%;
 	    margin: 5% 0%;
 	    background: white;
 	    border-radius: 10px;
