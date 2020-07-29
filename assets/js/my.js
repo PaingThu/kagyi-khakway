@@ -50,7 +50,7 @@
                     ]
     var vowelList = [
                       {word: 'အ',phrase1:'က + အ',phrase2:'က + *', phrase3: 'က',jpVoice:'ka + a  → ka', symbol:' '},
-                      {word: 'အာ',phrase1:'က + အာ',phrase2:'က + xာ',phrase3:'ကာ',jpVoice:'ka + ar  → kar',symbol:'ာ'},
+                      {word: 'အာ',phrase1:'က + အာ',phrase2:'က + ာ',phrase3:'ကာ',jpVoice:'ka + ar  → kar',symbol:'ာ'},
                       {word: 'ဣ',phrase1:'က + ဣ',phrase2:'က + x',phrase3:'ကိ',jpVoice:'ka + i  → ki',symbol:'ိ'},
                       {word: 'ဤ',phrase1:'က + ဤ',phrase2:'က + xီ',phrase3:'ကီ',jpVoice:'ka + i-  → ki-',symbol: 'ီ'},
                       {word: 'ဥ',phrase1:'က + ဥ',phrase2:'က + xု',phrase3:'ကု',jpVoice:'ka + u  → ku',symbol:'ု'},
