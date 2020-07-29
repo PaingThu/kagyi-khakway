@@ -55,10 +55,10 @@
                       {word: 'ဤ',phrase1:'က + ဤ',phrase2:'က + xီ',phrase3:'ကီ',jpVoice:'ka + i-  → ki-',symbol: 'ီ'},
                       {word: 'ဥ',phrase1:'က + ဥ',phrase2:'က + xု',phrase3:'ကု',jpVoice:'ka + u  → ku',symbol:'ု'},
                       {word: 'ဦ',phrase1:'က + ဦ',phrase2:'က + xူ',phrase3:'ကူ',jpVoice:'ka + u-  → ku-',symbol:'ူ'},
-                      {word: 'ဧ',phrase1:'က + ဧ',phrase2:'က + ေx',phrase3:'ကေ',jpVoice:'ka + ay  → kay',symbol:'ေ'},
+                      {word: 'ဧ',phrase1:'က + ဧ',phrase2:'က + xေ',phrase3:'ကေ',jpVoice:'ka + ay  → kay',symbol:'ေ'},
                       {word: 'အဲ',phrase1:'က + အဲ',phrase2:'က + xဲ',phrase3:'ကဲ',jpVoice:'ka + e  → ke',symbol:'ဲ'},
-                      {word: 'ဩ',phrase1:'က + ဩ',phrase2:'က + ေxာ',phrase3:'ကော',jpVoice:'ka + aw  → kaw',symbol: 'ော'},
-                      {word: 'ဪ',phrase1:'က + ဪ',phrase2:'က + ေxာ်',phrase3:'ကော်',jpVoice:'ka + aww  → kaw-',symbol:'ော်'},
+                      {word: 'ဩ',phrase1:'က + ဩ',phrase2:'က + xော',phrase3:'ကော',jpVoice:'ka + aw  → kaw',symbol: 'ော'},
+                      {word: 'ဪ',phrase1:'က + ဪ',phrase2:'က + xော်',phrase3:'ကော်',jpVoice:'ka + aww  → kaw-',symbol:'ော်'},
                       {word: 'အံ',phrase1:'က + အံ',phrase2:'က + xံ',phrase3:'ကံ',jpVoice:'ka + an  → kan',symbol:'ံ'},
                       {word: 'အား',phrase1:'က + အား',phrase2:'က + xား',phrase3:'ကား',jpVoice:'karr + arr  → karr',symbol:'ား'},
                     ]
