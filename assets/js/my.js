@@ -232,9 +232,9 @@
       template: "<span :class = '{active: this.$parent.selectedWord == todo.word}' v-on:click = 'showPhrase(todo)'>{{todo.word}}<br><label>{{todo.symbol}}</label></span>",
       methods:{
         showPhrase:function(todo){
-          page2.phrase1 = todo.phrase1;
-          page2.phrase2 = todo.phrase2;
-          page2.phrase3 = todo.phrase3;
+          page2.phrase1 = "က + " + todo.word;
+          page2.phrase2 = "က + " + todo.symbol;
+          page2.phrase3 = "က" + todo.symbol;
           page2.jpVoice = todo.jpVoice;
           menu.menu = "menu";
           this.$parent.selectedWord = todo.word;
