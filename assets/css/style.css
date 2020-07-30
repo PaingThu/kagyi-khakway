@@ -13,6 +13,7 @@ body{
 }
 .hide{
 	display: none !important;
+	opacity 0.5s linear;
 }
 .show{
 	display:block !important;
@@ -359,21 +360,26 @@ footer{
 		display: block !important;
 			width: 100%;
 	    background: #666;
-	    height: 53px;
+	    height: 45px;
 	    padding: 10px;
 			color: white;
 	}
 	.app-nav_mm .menu-icon{
 		float:right;
+		width: 40px;
+		padding-left: 30px;
 	}
 	.app-nav_mm .menu-icon .icon-bar{
 		display: block;
-		width: 35px;
-		height: 3px;
+		width: 7px;
+		height: 7px;
 		background: white;
-		border-radius: 10%;
-		margin: 15% 0px;
+		border-radius: 7px;
+		margin: 3px 0px;
 		text-shadow: none;
+	}
+	.app-nav_mm .menu-icon .icon-bar:first-child{
+		margin-top: 0px !important;
 	}
 	.app-body{
 	    text-align: center;
@@ -470,37 +476,59 @@ footer{
 	.menu{
 			position:fixed;
 			width: 70%;
-			border-radius: 0% 0% 0% 5%;
-			background: #f9f9f9;
+			border-radius: 0% 0% 0% 0%;
+			background: #888;
 			top: 0;
 			right: 0;
-			opacity: 100%;
 			color: #666;
 			box-shadow: 3px 4px #999;
+			height: 100%;
+			opacity: 1;
 		}
 		.show{
 			display:block !important;
 		}
 		.menu .off-icon{
-			text-align: right;
-			padding: 5%;
+	    padding: 3% 5%;
+	    background: #777;
+	    height: 45px;
+	    margin-bottom: 5%;
+		}
+		/* .menu .off-icon img:first-child{
+			width: 30px;
+		} */
+		.menu .off-icon img:nth-child(2){
+			width: 14px;
+			float: right;
+    	margin: 3% 0px;
+		}
+		.menu .menu-logo{
+			width: 100%;
+			text-align: center;
+			margin-bottom: 5%;
+		}
+		.menu .menu-logo img{
+			width: 50px;
+		}
+		.menu .menu-logo span{
+			color: #622411;
 		}
 		.nav_mm{
 			text-align: right;
-			padding: 5%;
+			padding: 0% 5%;
 		}
 		.nav_mm a{
 			display: block;
-	    padding: 5% 5%;
-	    margin: 5% 0%;
-	    background: white;
-	    border-radius: 10px;
+	    padding: 3% 5%;
+	    margin-bottom: 5%;
+			border-bottom: 1px solid gray;
+			font-size: 12px;
 		}
 		.lmc{
 			width:82%;
 			position: fixed;
 			bottom: 22px;
-			background: #599;
+			background: #777;
 			left: 9%;
 			border-radius: 15px 15px 0px 0px;
 		}
@@ -508,7 +536,7 @@ footer{
 			display: block;
 	    padding: 3% 5%;
 	    margin: 3% 0%;
-			color: #666;
+			color: #FFF;
 	    font-size: 70%;
 	    border-bottom: 1px solid gray;
 		}
@@ -528,7 +556,7 @@ footer{
 			height: 30px;
 		  display: block;
 		  margin: 0px auto;
-		 	background: #599;
+		 	background: #888;
 			padding: 1% 0px;
 		}
 		.footer{

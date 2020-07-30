@@ -75,7 +75,7 @@
     var bodyTitle = {page1:{mm: 'မြန်မာစာ ဗျည်းအက္ခရာ (၃၃) လုံး',jp:'ミャンマー子音３３アルファベット', en: "Myanmar 33 Cosonant Alphabet"},
                      page2:{mm: 'မြန်မာစာ သင်ရိုးသရအက္ခရာ (၁၂) လုံး',jp:'ミャンマーカリキュラム母音１２アルファベット', en: "Myanmar Carriculum 12 Vowel Alphabet"},
                      lastPage:{mm: 'မြန်မာစာသင်ပုန်းကြီး ဖန်တီးရသော ရယ်ရွယ်ချက်',jp:'作った目的', en: "The purpose of creating this app"}};
-    var bodyMsg = {mm: 'မြန်မာစာ သင်ပုန်းကြီး', jp: 'ミャンマーサー黒板', en: 'Myanmar Blackboard'};
+    var bodyMsg = {mm: 'မြန်မာစာ သင်ပုန်းကြီး', jp: 'ミャンマー語黒板', en: 'Myanmar Blackboard'};
     var vowelExplain = "子音は子音だけで発音が出られません。子音を母音で"
 
 
@@ -133,11 +133,16 @@
       methods:{
         showMenu:function(){
           menu.menu = "menu show";
+          lmc.lmc = "hide";
         },
       }
     })
+    var logoImg = '<img src="assets/img/mamawawa.png"/>';
+    var menuTitle = '<span>'+bodyMsg.jp+'</span>'
+    var closeBtn = '<img src="assets/img/close.svg"/>';
+    var logoText = '<span>မမ ဝဝ ထထ က အက ပထမ</span>'
     Vue.component('off-icon',{
-      template:'<div v-on:click = "showMenu()" class="off-icon"><img src="assets/img/close.svg"/></div>',
+      template:'<div v-on:click = "showMenu()" class="off-icon">'+menuTitle+closeBtn+'</div>',
       methods:{
         showMenu:function(){
           menu.menu = "menu";
@@ -145,7 +150,9 @@
       }
     })
 
-
+    Vue.component('menu-logo',{
+      template:'<div class="menu-logo">'+logoImg+'<br>'+logoText+'</div>'
+    })
 
     var appHeader = new Vue({
       el: '#appHeader',
@@ -368,6 +375,7 @@
           }else{
             lmc.lmc = "lmc";
           }
+          menu.menu = "menu";
 
         },
       }
