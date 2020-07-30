@@ -233,7 +233,7 @@
       methods:{
         showPhrase:function(todo){
           page2.phrase1 = "က + " + todo.word;
-          page2.phrase2 = "က + " + todo.symbol;
+          page2.phrase2 = "က・" + todo.symbol;
           page2.phrase3 = "က" + todo.symbol;
           page2.jpVoice = todo.jpVoice;
           menu.menu = "menu";
