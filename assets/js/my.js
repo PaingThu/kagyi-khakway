@@ -6,6 +6,16 @@
                     {nav: '母音アルファベット'},
                     {nav: '作った目的'},
                   ];
+    var lmcNavListCo = [
+                      {nav: '子音アルファベット書き方'},
+                      {nav: 'その他１'},
+                      {nav: 'その他２'},
+                    ]
+    var lmcNavListVo = [
+                      {nav: '母音アルファベット書き方'},
+                      {nav: 'その他１'},
+                      {nav: 'その他２'},
+                    ]
     var yellow = "yellow";
     var green = "green";
     var white = "white";
@@ -49,18 +59,18 @@
                       {word: '-',phrase:'',jpVoice:'',color:blue},
                     ]
     var vowelList = [
-                      {word: 'အ',phrase1:'က + အ',phrase2:'က + *', phrase3: 'က',jpVoice:'ka + a  → ka', symbol:' '},
-                      {word: 'အာ',phrase1:'က + အာ',phrase2:'က + xာ',phrase3:'ကာ',jpVoice:'ka + ar  → kar',symbol:'ာ'},
-                      {word: 'ဣ',phrase1:'က + ဣ',phrase2:'က + xိ',phrase3:'ကိ',jpVoice:'ka + i  → ki',symbol:'ိ'},
-                      {word: 'ဤ',phrase1:'က + ဤ',phrase2:'က + xီ',phrase3:'ကီ',jpVoice:'ka + i-  → ki-',symbol: 'ီ'},
-                      {word: 'ဥ',phrase1:'က + ဥ',phrase2:'က + xု',phrase3:'ကု',jpVoice:'ka + u  → ku',symbol:'ု'},
-                      {word: 'ဦ',phrase1:'က + ဦ',phrase2:'က + xူ',phrase3:'ကူ',jpVoice:'ka + u-  → ku-',symbol:'ူ'},
-                      {word: 'ဧ',phrase1:'က + ဧ',phrase2:'က + xေ',phrase3:'ကေ',jpVoice:'ka + ay  → kay',symbol:'ေ'},
-                      {word: 'အဲ',phrase1:'က + အဲ',phrase2:'က + xဲ',phrase3:'ကဲ',jpVoice:'ka + e  → ke',symbol:'ဲ'},
-                      {word: 'ဩ',phrase1:'က + ဩ',phrase2:'က + xော',phrase3:'ကော',jpVoice:'ka + aw  → kaw',symbol: 'ော'},
-                      {word: 'ဪ',phrase1:'က + ဪ',phrase2:'က + xော်',phrase3:'ကော်',jpVoice:'ka + aww  → kaw-',symbol:'ော်'},
-                      {word: 'အံ',phrase1:'က + အံ',phrase2:'က + xံ',phrase3:'ကံ',jpVoice:'ka + an  → kan',symbol:'ံ'},
-                      {word: 'အား',phrase1:'က + အား',phrase2:'က + xား',phrase3:'ကား',jpVoice:'karr + arr  → karr',symbol:'ား'},
+                      {word: 'အ',jpVoice:'ka + a  → ka', symbol:' '},
+                      {word: 'အာ',jpVoice:'ka + ar  → kar',symbol:'ာ'},
+                      {word: 'ဣ',jpVoice:'ka + i  → ki',symbol:'ိ'},
+                      {word: 'ဤ',jpVoice:'ka + i-  → ki-',symbol: 'ီ'},
+                      {word: 'ဥ',jpVoice:'ka + u  → ku',symbol:'ု'},
+                      {word: 'ဦ',jpVoice:'ka + u-  → ku-',symbol:'ူ'},
+                      {word: 'ဧ',jpVoice:'ka + ay  → kay',symbol:'ေ'},
+                      {word: 'အဲ',jpVoice:'ka + e  → ke',symbol:'ဲ'},
+                      {word: 'ဩ',jpVoice:'ka + aw  → kaw',symbol: 'ော'},
+                      {word: 'ဪ',jpVoice:'ka + aww  → kaw-',symbol:'ော်'},
+                      {word: 'အံ',jpVoice:'ka + an  → kan',symbol:'ံ'},
+                      {word: 'အား',jpVoice:'karr + arr  → karr',symbol:'ား'},
                     ]
     var bodyTitle = {page1:{mm: 'မြန်မာစာ ဗျည်းအက္ခရာ (၃၃) လုံး',jp:'ミャンマー子音３３アルファベット', en: "Myanmar 33 Cosonant Alphabet"},
                      page2:{mm: 'မြန်မာစာ သင်ရိုးသရအက္ခရာ (၁၂) လုံး',jp:'ミャンマーカリキュラム母音１２アルファベット', en: "Myanmar Carriculum 12 Vowel Alphabet"},
@@ -86,18 +96,22 @@
             allHide();
             appTitle.pgClassName = "appTitle";
             page1.pgClassName = "page1";
+            more.more = "more";
             appHeader.pageTitle = pageTitle;
             appTitle.title = bodyTitle.page1.jp;
             appTitle.subTitle = bodyMsg.jp;
+            lmc.lmcNavList = lmcNavListCo;
           }
           if(pageTitle == "母音アルファベット"){
             addClassBody("bg-white");
             allHide();
             appTitle.pgClassName = "appTitle";
             page2.pgClassName = "page2";
+            more.more = "more";
             appHeader.pageTitle = pageTitle;
             appTitle.title = bodyTitle.page2.jp;
             appTitle.subTitle = bodyMsg.jp;
+            lmc.lmcNavList = lmcNavListVo;
           }
           if(pageTitle == "作った目的"){
             addClassBody("bg-white");
@@ -109,6 +123,7 @@
             appHeader.pageTitle = pageTitle;
           }
           menu.menu = "menu";
+          more.pageTitle = pageTitle;
 
         },
       },
@@ -246,7 +261,7 @@
       data:{
         vowelList: vowelList,
         phrase1: "က + အ",
-        phrase2: "က + *",
+        phrase2: "က ・  ",
         phrase3: "က",
         jpVoice: "ka + a  → ka",
         menu:"menu",
@@ -287,7 +302,82 @@
         menu:"menu hide",
         navList: navList,
       },
+    })
 
+    Vue.component('lmc-nav',{
+      props:['toshow'],
+      template:"<a v-on:click='showPage(toshow.nav)'>{{toshow.nav}}</a>",
+      methods:{
+        showPage:function(pageTitle){
+          if(pageTitle == "ホーム"){
+            addClassBody("bg-origin");
+            allHide();
+            home.pgClassName = "home";
+            appHeader.pageTitle = "";
+
+          }
+          if(pageTitle == "子音アルファベット"){
+            addClassBody("bg-white");
+            allHide();
+            appTitle.pgClassName = "appTitle";
+            page1.pgClassName = "page1";
+            more.more = "more";
+            appHeader.pageTitle = pageTitle;
+            appTitle.title = bodyTitle.page1.jp;
+            appTitle.subTitle = bodyMsg.jp;
+          }
+          if(pageTitle == "母音アルファベット"){
+            addClassBody("bg-white");
+            allHide();
+            appTitle.pgClassName = "appTitle";
+            page2.pgClassName = "page2";
+            more.more = "more";
+            appHeader.pageTitle = pageTitle;
+            appTitle.title = bodyTitle.page2.jp;
+            appTitle.subTitle = bodyMsg.jp;
+          }
+          if(pageTitle == "作った目的"){
+            addClassBody("bg-white");
+            allHide();
+            appTitle.pgClassName = "appTitle";
+            lastPage.pgClassName = "lastPage";
+            appTitle.title = bodyTitle.lastPage.jp;
+            appTitle.subTitle = bodyMsg.jp;
+            appHeader.pageTitle = pageTitle;
+          }
+          menu.menu = "menu";
+          more.pageTitle = pageTitle;
+
+        },
+      },
+    })
+    var lmc = new Vue({
+      el:'#learnMoreContents',
+      data:{
+        lmcNavList: lmcNavListCo,
+        lmc:"hide",
+      }
+    })
+
+    Vue.component('learn-more',{
+      template:"<span v-on:click='learnMore()'>{{this.$parent.pageTitle}}についてもっと勉強</span>",
+      methods:{
+        learnMore:function(){
+          if(lmc.lmc == "lmc"){
+            lmc.lmc = "hide";
+          }else{
+            lmc.lmc = "lmc";
+          }
+
+        },
+      }
+    })
+    var more = new Vue({
+      el: '#more',
+      data:{
+        more: 'hide',
+        pageTitle: '',
+      }
     })
 
     function allHide() {
@@ -296,6 +386,8 @@
       page1.pgClassName = "page1 hide";
       page2.pgClassName = "page2 hide";
       lastPage.pgClassName = "lastPage hide";
+      more.more = "hide";
+      lmc.lmc = "hide";
     }
 
     function addClassBody(bgColor){
