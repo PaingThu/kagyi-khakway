@@ -3,6 +3,8 @@ vue.js လေ့လာရင်းနဲ့ ရေးဖြစ်သွားတ
 
 vue.js လေ့လာဖို့ တိုက်တွန်းတဲ့ Bro Thura ကျေးဇူးတင်ပါတယ်ဗျ
 
+https://paingthu.github.io/kagyi-khakway/
+
 ကိုးကာ
 
 1. https://www.slideshare.net/mgmoelinaung/ss-16109960
